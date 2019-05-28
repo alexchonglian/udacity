@@ -1,16 +1,12 @@
 """
-practice
+Practice Problems
 
 [Dasgupta, Papadimitriou, Vazirani]
 
 6.1 contiguous subseq (substring)
-
 6.2 hotel stops
-
 6.3 Yuckdonalds
-
 6.4 string of words
-
 6.11 longest common substring
 
 Approach

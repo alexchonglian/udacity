@@ -1,3 +1,4 @@
+"""
 Knapsack Problem
 
 Input: n objects with
@@ -13,3 +14,4 @@ Two versions:
     one copy of each
     unlimited supply
 
+"""

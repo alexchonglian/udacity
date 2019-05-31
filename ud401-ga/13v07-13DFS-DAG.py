@@ -31,12 +31,21 @@ def dfs1(graph, start):
             if t not in visited:
                 explore(t)
         setclock(post, z)
-    for v in graph:
-        if v not in visited:
-            explore(v)
+    explore(start)
     return pre, post
 
-
+def dfs2(graph, start):
+    visited = set()
+    pre, post = [], []
+    def explore(z):
+        pre.append(z)
+        visited.add(z)
+        for t in graph[z]:
+            if t not in visited:
+                explore(t)
+        post.append(z)
+    explore(start)
+    return pre, post
 
 if __name__ == '__main__':
     edges = [
@@ -62,3 +71,14 @@ if __name__ == '__main__':
     }
     print(dfs1(adjlist0, 1))
     print(dfs1(adjlist1, 'B'))
+    print(dfs2(adjlist0, 1))
+    print(dfs2(adjlist1, 'B'))
+    adjlist2 = edges_to_adjlist([
+        ('X', 'Y'),
+        ('Y', 'U'),
+        ('Y', 'W'),
+        ('Y', 'Z'),
+        ('Z', 'W')
+    ])
+    print(dfs1(adjlist2, 'X'))
+    print(dfs2(adjlist2, 'X'))

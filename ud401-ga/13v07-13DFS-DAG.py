@@ -2,8 +2,8 @@ from collections import defaultdict
 
 def edges_to_adjlist(edges):
     adjlist = defaultdict(list)
-    for s,t in edges:
-        adjlist[s].append(t)
+    for f,t in edges:
+        adjlist[f].append(t)
     return adjlist
 
 def classic_dfs(graph, start):
@@ -34,6 +34,7 @@ def dfs1(graph, start):
     explore(start)
     return pre, post
 
+# use post order for topological sort
 def dfs2(graph, start):
     visited = set()
     pre, post = [], []

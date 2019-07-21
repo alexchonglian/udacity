@@ -49,6 +49,17 @@ def compute_value(grid,goal,cost):
                 grid[xp][yp] = -1
     return values
 
+# the answer, which uses DP, is sth like …
+# inefficient but get the job done
+"""
+def compute_value(grid,goal,cost):
+    change = True
+    while change:
+        change = False
+        for x in range(height):
+            for y in range(width):
+                update grid[x][y] if necessary
+"""
 if __name__ == '__main__':
     values = compute_value(grid,goal,cost)
     for v in values: print(v)

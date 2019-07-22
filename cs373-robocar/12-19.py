@@ -82,6 +82,7 @@ def optimum_policy2D(grid,init,goal,cost):
                 froms[(xn,yn,tn)] = (x,y,t,action_name[idx])
                 frontier.append([cn, xn, yn, tn])
     # backtracking
+    #for v in values:print v
     policy2D = [[' ' for _ in range(width)] for _ in range(height)]
     xg, yg = goal
     policy2D[xg][yg] = '*'
@@ -92,6 +93,52 @@ def optimum_policy2D(grid,init,goal,cost):
         x,y,t,a = froms[(x,y,t)]
         policy2D[x][y] = a
     #for p in policy2D: print p
+    return policy2D
+"""
+"""
+def optimum_policy2D(grid,init,goal,cost):
+    # Dynamic Programming
+    height, width = len(grid), len(grid[0])
+    values = [[[float('inf') for _ in range(4)] for _ in range(width)] for _ in range(height)]
+    policy = [[[' ' for _ in range(4)] for _ in range(width)] for _ in range(height)]
+    change = True
+    while change:
+        change = False
+        for x in range(height):
+            for y in range(width):
+                for t in range(4):
+                    if goal == [x,y] and values[x][y][t] > 0:
+                        values[x][y][t] = 0
+                        policy[x][y][t] = '*'
+                        change = True
+                    elif grid[x][y] == 0:
+                        for i in range(3):
+                            o2 = (t + action[i]) % 4
+                            x2 = x + forward[o2][0]
+                            y2 = y + forward[o2][1]
+                            if x2 >= 0 and x2 < height \
+                            and y2 >= 0 and y2 < width and grid[x2][y2] == 0:
+                                v2 = values[x2][y2][o2] + cost[i]
+                                if v2 < values[x][y][t]:
+                                    change = True
+                                    values[x][y][t] = v2
+                                    policy[x][y][t] = action_name[i]
+    #for v in values:print v
+    policy2D = [[' ' for _ in range(width)] for _ in range(height)]
+    x,y,t = init
+    policy2D[x][y] = policy[x][y][t]
+    while policy[x][y][t] != '*':
+        if policy[x][y][t] == '#':
+            o2 = t
+        elif policy[x][y][t] == 'R':
+            o2 = (t - 1) % 4
+        elif policy[x][y][t] == 'L':
+            o2 = (t + 1) % 4
+        x = x + forward[o2][0]
+        y = y + forward[o2][1]
+        t = o2
+        policy2D[x][y] = policy[x][y][t]
+    for p in policy2D: print p
     return policy2D
 
 if __name__ == '__main__':

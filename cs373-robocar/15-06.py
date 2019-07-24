@@ -53,7 +53,7 @@ def smooth(path, weight_data = 0.5, weight_smooth = 0.1, tolerance = 0.000001):
                 xcurr = path[i][j]
                 yprev, ycurr, ynext = newpath[i-1][j], newpath[i][j], newpath[i+1][j]
                 update = weight_data * (xcurr - ycurr) + weight_smooth * (ynext+yprev-2.0*ycurr)
-                newpath[i][j] = newpath[i][j] + update
+                newpath[i][j] += update
                 change += abs(update)
     return newpath # Leave this line for the grader!
 

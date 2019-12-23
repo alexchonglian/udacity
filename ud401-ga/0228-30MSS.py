@@ -37,7 +37,14 @@ def mss(a):
     print(dp)
     return max(dp)
 
+def mss(a):
+    dp, ans = 0, 0
+    for ai in a:
+        dp = ai+max(0, dp)
+        ans = max(ans, dp)
+    return ans
+
 if __name__ == '__main__':
-    print(mss([-1, 1, -7, 3, 4, 5, -1, -2, 4, -5]))
+    print(mss([-1, 1, -7, 3, 4, 5, -1, -2, 4, -5])) #13
 
 

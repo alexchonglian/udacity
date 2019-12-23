@@ -97,6 +97,38 @@ def lcs4(x, y):
     for row in L:print(row)
     return L[-1][-1]
 
+# 2019.12
+def lcs5(x, y):
+    lenx, leny = len(x), len(y)
+    L = [[0]*(leny+1) for _ in range(lenx+1)]
+    for i in range(1, lenx+1):
+        for j in range(1, leny+1):
+            if x[i-1] == y[j-1]:
+                L[i][j] = 1+L[i-1][j-1]
+            else:
+                L[i][j] = max(L[i][j-1], L[i-1][j])
+    for l in L: print(l)
+    return L[lenx][leny]
+
+
+def lcs6(x, y):
+    lenx, leny = len(x), len(y)
+    L = [[0]*leny for _ in range(lenx)]
+    #getL = lambda i,j: 0 if i<0 or j<0 else L[i][j]
+    def getL(x, y):
+        if 0 <= x < lenx and 0 <= y < leny:
+            return L[x][y]
+        else:
+            return 0
+    for i in range(lenx):
+        for j in range(leny):
+            if x[i] == y[j]:
+                L[i][j] = 1+getL(i-1, j-1)
+            else:
+                L[i][j] = max(getL(i, j-1), getL(i-1,j))
+    for l in L: print(l)
+    return L[lenx-1][leny-1]
+
 if __name__ == '__main__':
     print(lcs4(list('ABC'), list('BC')))
     print(lcs4(list('BCDBCDA'), list('ABECBAB')))

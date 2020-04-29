@@ -38,7 +38,24 @@ def triangle(n):
 def triangle(n):
     return [d.setdefault(j, [sum(d[len(d)-1][max(i, 0):i+2]) for i in range(-1, j)])
         for j, d in enumerate([{0: [1]}] * n)]
-        
+
+def triangle(n):
+    ans = []
+    row = [1]
+    for _ in range(n):
+        ans.append(row)
+        row = [i+j for i,j in zip([0]+row, row+[0])]
+    return ans
+
+def triangle(n):
+    def g():
+        row = [1]; yield row
+        for _ in range(n-1):
+            row = [i+j for i,j in zip([0]+row, row+[0])]
+            yield row
+    return list(g())
+
+
 #For example:
 
 print triangle(0)

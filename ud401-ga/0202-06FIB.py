@@ -18,10 +18,17 @@ def fib1(n):
 
 F = {0:0,1:1}
 def fib2(n):
-    if n in F:
-        return F[n]
-    else:
-        return fib2(n-1)+fib2(n-2)
+    if n not in F:
+        F[n] = fib2(n-1)+fib2(n-2)
+    return F[n]
+
+def fib3(n):
+    if n == 0: return 0
+    F = [None]*(n+1)
+    F[0], F[1] = 0, 1
+    for i in range(2, n+1):
+        F[i] = F[i-1]+F[i-2]
+    return F[n]
 
 def creat_fib():
     cache = {0:0,1:1}
@@ -37,6 +44,8 @@ def creat_fib():
 fib = creat_fib()
 
 if __name__ == '__main__':
-    print(fib(0))
-    print(fib(5))
-    print(fib(10))
+    print(fib3(0))
+    print(fib3(5))
+    print(fib3(10))
+
+

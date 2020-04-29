@@ -56,6 +56,7 @@ def lis1(A):
 
 def lis2(A):
     # use max([], default=0)
+    # wrong
     size = len(A)
     L = [1]
     for i in range(1, size):
@@ -64,8 +65,27 @@ def lis2(A):
         L.append(Li)
     return L
 
+def lis3(a):
+    # use max([], default=0)
+    size = len(a)
+    L = [1]
+    for i in range(1, size):
+        ai = a[i]
+        Li = 1 + max([Lj for Lj, aj in zip(L, a[:i]) if aj < ai], default=0)
+        L.append(Li)
+    return L
+
+def lis4(a):
+    # use max([], default=0)
+    size = len(a)
+    L = [1]
+    for i in range(1, size):
+        Li = 1 + max((L[j] for j in range(i) if a[j] < a[i]), default=0)
+        L.append(Li)
+    return L
+
 if __name__ == '__main__':
-    L = lis1([5,7,4,-3,9,1,10,4,5,8,9,3])
+    L = lis4([5,7,4,-3,9,1,10,4,5,8,9,3])
     print(L)
     # optimal = [-3,1,4,5,8,9] ?
     # L = [1,2,1,1,3,2,4,3,4,5,6,3]

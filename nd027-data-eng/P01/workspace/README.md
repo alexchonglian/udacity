@@ -3,17 +3,17 @@ Using the song and log datasets, you'll need to create a star schema optimized f
 
 ## Fact Table
 1. **songplays** - records in log data associated with song plays i.e. records with page NextSong
-. songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
+* songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
 
 ## Dimension Tables
 2. **users** - users in the app
-. user_id, first_name, last_name, gender, level
+* user_id, first_name, last_name, gender, level
 3. **songs** - songs in music database
-. song_id, title, artist_id, year, duration
+* song_id, title, artist_id, year, duration
 4. **artists** - artists in music database
-. artist_id, name, location, latitude, longitude
+* artist_id, name, location, latitude, longitude
 5. **time** - timestamps of records in songplays broken down into specific units
-. start_time, hour, day, week, month, year, weekday
+* start_time, hour, day, week, month, year, weekday
 
 ## Project Template
 To get started with the project, go to the workspace on the next page, where you'll find the project template files. You can work on your project and submit your work through this workspace. Alternatively, you can download the project template files from the Resources folder if you'd like to develop your project locally.

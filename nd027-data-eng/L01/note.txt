@@ -1,0 +1,2 @@
+brew install cql
+brew install cassandra

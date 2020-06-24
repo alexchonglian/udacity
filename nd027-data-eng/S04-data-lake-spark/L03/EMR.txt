@@ -1,0 +1,21 @@
+aws emr create-cluster --name cluster1 --use-default-roles  --release-label emr-5.28.0 --instance-count 2 --applications Name=Spark Name=Zeppelin  --ec2-attributes KeyName=key --instance-type m5.xlarge --instance-count 3
+
+--auto-terminate
+
+ssh -i ~/.aws/key.pem hadoop@ec2-44-234-84-238.us-west-2.compute.amazonaws.com
+ssh -i ~/.aws/key.pem hadoop@ec2-44-234-84-238.us-west-2.compute.amazonaws.com -ND 8157
+ssh -i ~/.aws/key.pem hadoop@ec2-44-234-84-238.us-west-2.compute.amazonaws.com -vND 8157
+传入-ND 8157的进程应该hang，去EMR的App UI tab，Spark History Server, Zeppelin, Resource Manager应该有链接
+
+
+scp -i ~/.aws/key.pem ~/Documents/code/udacity/nd027-data-eng/S04-data-lake-spark/L03/08/* hadoop@ec2-44-234-84-238.us-west-2.compute.amazonaws.com:/home/hadoop/
+
+aws s3 cp ./sparkify_log_small.json   s3://aws-emr-resources-769590699532-us-west-2
+aws s3 cp ./sparkify_log_small_2.json s3://aws-emr-resources-769590699532-us-west-2
+
+
+hdfs dfs -put ./sparkify_log_small_2.json user/sparkify_data/
+hdfs dfs -ls /
+hadoop fs -put ./sparkify_log_small_2.json /user/sparkify_data/
+
+hdfs dfs -copyFromLocal ./sparkify_log_small_2.json /user/sparkify_data/

@@ -10,8 +10,11 @@ As their data engineer, you are tasked with building an ETL pipeline that extrac
 In this project, you'll apply what you've learned on data warehouses and AWS to build an ETL pipeline for a database hosted on Redshift. To complete the project, you will need to load data from S3 to staging tables on Redshift and execute SQL statements that create the analytics tables from these staging tables.
 
 Datasets
+
 **Song Data Path** s3://udacity-dend/song_data
+
 **Log Data Path** s3://udacity-dend/log_data
+
 **Log Data JSON Path** s3://udacity-dend/log_json_path.json
 
 Song Dataset
@@ -53,10 +56,10 @@ The project template includes four files:
 **README.md** is where you'll provide discussion on your process and decisions for this ETL pipeline.
 
 ## Steps
-1. Run redshift_create.ipynb to create redshift cluster, configure dwh.cfg before doing so
-2. Run python3 create_tables.py in terminal
-3. Run python3 etl.py in terminal
-4. Run redshift_query_ext_sql.ipynb (or redshift_query_psycopg2.ipynb) to verify data, e.g. describe tables, count each tables, analyze data by joining multiple tables, etc.
-5. Run redshift_delete.ipynb to delete redshift cluster, cleanup configs in dwh.cfg, specifically AWS.KEY, AWS.SECRET, IAM_ROLE.ARN
+1. Run **redshift_create.ipynb** to create redshift cluster, configure dwh.cfg before doing so
+2. Run **python3 create_tables.py** in terminal
+3. Run **python3 etl.py** in terminal
+4. Run **redshift_query_ext_sql.ipynb** (or redshift_query_psycopg2.ipynb) to verify data, e.g. describe tables, count each tables, analyze data by joining multiple tables, etc.
+5. Run **redshift_delete.ipynb** to delete redshift cluster, cleanup configs in dwh.cfg, specifically AWS.KEY, AWS.SECRET, IAM_ROLE.ARN
 
 

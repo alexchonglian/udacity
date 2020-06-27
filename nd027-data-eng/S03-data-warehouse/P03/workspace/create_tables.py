@@ -4,12 +4,18 @@ from sql_queries import create_table_queries, drop_table_queries
 
 
 def drop_tables(cur, conn):
+    """
+    drop all tables if exists, on redshift cluster (both stage DB tables and final DWH tables)
+    """
     for query in drop_table_queries:
         cur.execute(query)
         conn.commit()
 
 
 def create_tables(cur, conn):
+    """
+    creating DB tables on redshift cluster
+    """
     for query in create_table_queries:
         cur.execute(query)
         conn.commit()

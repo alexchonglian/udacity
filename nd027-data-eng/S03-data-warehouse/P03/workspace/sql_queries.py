@@ -149,7 +149,8 @@ songplay_table_insert = ("""
         e.userAgent     as user_agent
     from staging_events e
     join staging_songs  s
-    on e.song = s.title and e.artist = s.artist_name and e.page = 'NextSong'
+    on e.song = s.title and e.artist = s.artist_name and e.length = s.duration
+    and e.page = 'NextSong'
 """)
 
 user_table_insert = ("""

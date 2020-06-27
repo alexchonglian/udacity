@@ -4,6 +4,9 @@ from sql_queries import copy_table_queries, insert_table_queries
 
 
 def load_staging_tables(cur, conn):
+    """
+    loading data from S3 files to staging redshift DB
+    """
     for query in copy_table_queries:
         print(query.split('\n')[1])
         cur.execute(query)
@@ -11,6 +14,9 @@ def load_staging_tables(cur, conn):
 
 
 def insert_tables(cur, conn):
+    """
+    insert from staging redshift DB to target data warehouse redshift DB
+    """
     for query in insert_table_queries:
         print(query.split('\n')[1])
         cur.execute(query)

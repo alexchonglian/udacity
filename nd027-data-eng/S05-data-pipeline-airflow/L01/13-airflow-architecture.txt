@@ -1,0 +1,3 @@
+Web UI: provides a control interface for users and maintainers
+Scheduler: starts DAGs based on triggers or schedules and moves them towards completion
+Workers: run and record the outcome of individual pipeline tasks

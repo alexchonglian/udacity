@@ -1,0 +1,161 @@
+ABBREVIATIONS
+3P  Three-point field goals
+Ast Assists
+Blk Blocks
+C   Center
+D   Drafted
+FA  Free agent
+FG  Field goals
+FT  Free throw
+G   Guard
+GP  Games played
+Ht  Height
+L   Losses
+n/a Not available
+No. Sweater number
+Pct Percentage
+PF  Power forward
+PG  Point guard
+Pos Position
+Pts Points
+R   Rookie
+Reb Rebounds
+S   Signed
+SD  Supplemental round pick (draft)
+SF  Small forward
+SG  Shooting guard
+Stl Steals
+T   Traded
+TO  Turnovers
+W   Wins; waived
+Wt  Weight
+COUNTRIES
+AMS American Samoa
+ANT Antilles
+ARG Argentina
+ARU Aruba
+AUS Australia
+AUT Austria
+BAH Bahamas
+BEL Belgium
+BLR Belarus
+BOL Bolivar
+BRA Brazil
+BRU Brunei-Borneo
+CAM Cameroon
+CAN Canada
+CHN China
+COL Columbia
+CRO Croatia
+CUB Cuba
+CUR Curacao
+CZE Czech. Republic
+DAN Dutch Antilles
+DOM Dominican Republic
+ENG ENGLAND
+ESP Spain
+FIJ Fiji
+FIN Finland
+FRA France
+GBR England
+GEO Georgia
+GER Germany
+GRE Greece
+HAI Haiti
+HOL Holland
+HUN Hungary
+IRL Ireland
+ITA ITALY
+IVB Virgin Islands
+JAM Jamaica
+KAZ Kazakhstan
+KOR South Korea
+LAT Latvia
+LIB Lebanon
+LTU Lithuania
+LUX Luxembourg
+MAL Mali
+MAR Marshall Islands
+MEX Mexico
+NCA Nicaragua
+NED Netherlands
+NGR Nigeria
+NOR Norway
+NZl New Zealand
+PAN Panama
+Par Paraguay
+POL Poland
+PUR Puerto Rico
+RUS Russia
+SAF South Africa
+SAM Samoan Islands
+SCO Scotland
+SEN Senegal
+SIN Singapore
+SLO Slovenia
+SUI Switzerland
+SVK Slovakia
+SWE Sweden
+TAI Taiwan
+TAN Tanzania
+TNT Trinidad
+TUR Turkey
+UKR Ukraine
+USA United States of America
+UZB Uzbekistan
+VEN Venezuela
+VIE Vietnam
+VIN Grenadines
+WAF West Africa
+WAL Wales
+WGER    West Germany
+YUG Yugoslavia
+ZAI Zaire
+ZIM Zimbabwe
+LEAGUES
+ABA American Basketball Association
+CBA Continental Basketball Association
+EBA Eastern Basketball Alliance
+IBA International Basketball Associaton
+IBL International Basketball League
+MBA Midwest Basketball Association
+NABL    North American Basketball League
+NBA National Basketball Association
+NBDL    National Basketball Development League
+NCAA    National Collegiate Athletic Association
+NRL National Rookie League
+SEBL    Southest Exposure Basketball League
+UPBL    United Pro Basketball League
+USBL    United States Basketball League
+TEAMS
+Atl Atlanta
+Bos Boston
+Cha Charlotte
+Chi Chicago
+Cle Cleveland
+Dal Dallas
+Den Denver
+Det Detroit
+GS  Golden State
+Hou Houston
+Ind Indiana
+LAC LA Clippers
+LAL LA Lakers
+Mem Memphis
+Mia Miami
+Mil Milwaukee
+Min Minnesota
+NJ  New Jersey
+NO  New Orleans
+NY  New York
+Orl Orlando
+Phi Philadelphia
+Phx Phoenix
+Por Portland
+SA  San Antonio
+Sac Sacramento
+Sea Seattle
+Tor Toronto
+Uth Utah
+Van Vancouver
+Wsh Washington

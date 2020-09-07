@@ -1,0 +1,84 @@
+Table team as T {
+  id varchar [pk]
+  name varchar
+  description varchar
+  
+}
+
+Table player as P {
+  id  int [pk]
+  name varchar
+  weight int
+  height int
+  college varchar
+  start_year int
+  end_year int
+}
+
+Table birth_date as D {
+  year int
+  month int
+  day int
+}
+
+Table season {
+  start_year int [pk]
+  end_year int
+  
+}
+
+Table stat {
+  id int [pk, increment]
+  Year     int [ref: > season.start_year]
+  Player   varchar [ref: > player.name]
+  Pos      varchar
+  Age      int
+  Team     varchar [ref: > team.id]
+  G        int
+  GS       int
+  MP       int
+  PER      float
+  "TS%"    float
+  3PAr     float
+  FTr      float
+  "ORB%"   float
+  "DRB%"   float
+  "TRB%"   float
+  "AST%"   float
+  "STL%"   float
+  "BLK%"   float
+  "TOV%"   float
+  "USG%"   float
+  blanl    varchar
+  OWS      float
+  DWS      float
+  WS       float
+  "WS/48"  float
+  blank2   varchar
+  OBPM     float
+  DBPM     float
+  BPM      float
+  VORP     float
+  FG       int
+  FGA      int
+  "FG%"    float
+  3P       int
+  3PA      int
+  "3P%"    float
+  2P       int
+  2PA      int
+  "2P%"    float
+  "eFG%"   float
+  FT       int
+  FTA      int
+  "FT%"    float
+  ORB      int
+  DRB      int
+  TRB      int
+  AST      int
+  STL      int
+  BLK      int
+  TOV      int
+  PF       int
+  PTS      int
+}

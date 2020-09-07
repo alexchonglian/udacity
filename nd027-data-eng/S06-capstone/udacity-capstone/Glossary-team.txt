@@ -1,0 +1,14 @@
+Rk -- Rank
+W -- Wins
+L -- Losses
+W/L% -- Win-Loss Percentage
+MOV -- Margin of Victory
+ORtg -- Offensive Rating
+An estimate of points produced (players) or scored (teams) per 100 possessions
+DRtg -- Defensive Rating
+An estimate of points allowed per 100 possessions
+NRtg -- Net Rating; an estimate of point differential per 100 possessions.
+MOV/A -- Adjusted Margin of Victory; margin of victory adjusted for strength of opponent.
+ORtg/A -- Adjusted Offensive Rating, An estimate of points scored per 100 possessions adjusted for strength of opponent defense.
+DRtg/A -- Adjusted Defensive Rating, An estimate of points allowed per 100 possessions adjusted for strength of opponent offense.
+NRtg/A -- Adjusted Net Rating; an estimate of point differential per 100 possessions adjusted for strength of opponent.

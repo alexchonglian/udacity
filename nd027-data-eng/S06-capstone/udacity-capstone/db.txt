@@ -1,0 +1,130 @@
+%%sql
+DROP TABLE IF EXISTS dimBirthDate;
+CREATE TABLE dimBirthDate
+(
+  birth_ds    date    not null primary key,
+  birth_year  integer not null distkey,
+  birth_month integer not null,
+  birth_day   integer not null
+);
+
+DROP TABLE IF EXISTS dimPlayer;
+CREATE TABLE dimPlayer
+(
+  id          integer not null primary key,
+  name        varchar not null distkey sortkey,
+  height      integer,
+  weight      integer,
+  birth_city  varchar,
+  birth_state varchar,
+  college     varchar,
+  position    varchar,
+  year_end    integer,
+  year_start  integer,
+  birth_year  integer,
+  birth_ds    date
+);
+
+DROP TABLE IF EXISTS fctPlayerStat;
+CREATE TABLE fctPlayerStat
+(
+  id          integer not null primary key,
+  year        integer,
+  player      varchar not null distkey,
+  pos         varchar,
+  age         integer,
+  team        varchar not null sortkey,
+  g           integer,
+  gs          integer,
+  mp          integer,
+  per         float,
+  ts_p        float,
+  _3par       float,
+  ftr         float,
+  orb_p       float,
+  drb_p       float,
+  trb_p       float,
+  ast_p       float,
+  stl_p       float,
+  blk_p       float,
+  tov_p       float,
+  usg_p       float,
+  blanl       varchar,
+  ows         float,
+  dws         float,
+  ws          float,
+  ws_o_48     float,
+  blank2      varchar,
+  obpm        float,
+  dbpm        float,
+  bpm         float,
+  vorp        float,
+  fg          integer,
+  fga         integer,
+  fg_p        float,
+  _3p         integer,
+  _3pa        integer,
+  _3p_p       float,
+  _2p         integer,
+  _2pa        integer,
+  _2p_p       float,
+  efg_p       float,
+  ft          integer,
+  fta         integer,
+  ft_p        float,
+  orb         integer,
+  drb         integer,
+  trb         integer,
+  ast         integer,
+  stl         integer,
+  blk         integer,
+  tov         integer,
+  pf          integer,
+  pts         integer
+);
+
+DROP TABLE IF EXISTS dimTeam;
+CREATE TABLE dimTeam
+(
+  id          varchar not null primary key,
+  name        varchar not null,
+  city        varchar not null,
+  time        varchar not null
+);
+
+DROP TABLE IF EXISTS fctTeamStat;
+CREATE TABLE fctTeamStat
+(
+  season      varchar not null sortkey,
+  league      varchar,
+  team        varchar not null distkey,
+  wins        integer,
+  losses      integer,
+  wl_pc       float,
+  finish      integer,
+  srs         float,
+  pace        float,
+  rel_pace    float,
+  ortg        float,
+  rel_ortg    float,
+  drtg        float,
+  rel_drtg    float,
+  playoffs    varchar,
+  coaches     varchar,
+  top_ws      varchar,
+  playoff_score   integer,
+  season_end_year integer
+);
+
+DROP TABLE IF EXISTS fctCoach;
+CREATE TABLE fctCoach
+(
+  season      varchar not null sortkey,
+  league      varchar not null,
+  team        varchar not null distkey,
+  finish      integer not null,
+  top_ws      varchar not null,
+  coach       varchar not null,
+  wins        integer not null,
+  losses      integer not null
+);
